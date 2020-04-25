@@ -16,7 +16,7 @@ export default function info() {
         Jason Miazga.
       </div>
       <div className="h1 code mt-4 mb-3">{"{"}</div>
-      <div className="text-muted mx-5 my-4 h3 text-justify info">
+      <div className="text-muted mx-5 my-4 h3 info">
         Senior Developer at VNDLY.
         <br /> Organizer for{" "}
         <a href="https://momentumdevcon.com/">
@@ -30,19 +30,24 @@ export default function info() {
       </div>
       <div className="h1 code mt-2 mb-3">{"}"}</div>
       <div className="h1 mt-5">
-        <a className="mr-5 icon" href="https://twitter.com/jmiazga">
+        <a className="mr-4 mr-md-5 icon" href="https://twitter.com/jmiazga" aria-label="Twitter">
           <Twitter />
         </a>
-        <a className="mr-5 icon" href="https://github.com/jmiazga">
+        <a className="mr-4 mr-md-5 icon" href="https://github.com/jmiazga" aria-label="Github">
           <Github />
         </a>
         <a
-          className="mr-5 icon"
+          className="mr-4 mr-md-5 icon"
           href="https://www.linkedin.com/in/jasonmiazga/"
+          aria-label="LinkedIn"
         >
           <Linkedin />
         </a>
-        <a className="mr-5 icon" href="mailto://jmiazga+website@gmail.com">
+        <a
+          className="mr-4 mr-md-5 icon"
+          href="mailto://jmiazga+website@gmail.com"
+          aria-label="Email"
+        >
           <Mail />
         </a>
       </div>

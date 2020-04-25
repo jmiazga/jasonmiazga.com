@@ -8,7 +8,9 @@ function index() {
     <div>
       <Info />
       <Helmet>
+        <html lang="en" />
         <meta charSet="utf-8" />
+        <meta name="description" content="Jason Miazga Cincinnati, OH web developer" />
         <title>jasonmiazga.com</title>
       </Helmet>
     </div>
