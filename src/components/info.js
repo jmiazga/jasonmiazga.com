@@ -7,7 +7,7 @@ import {
   FaEnvelope as Mail,
 } from "react-icons/fa"
 
-export default function info() {
+const Info = ({ social }) => {
   return (
     <div className="container">
       <div className="my-5"></div>
@@ -30,22 +30,30 @@ export default function info() {
       </div>
       <div className="h1 code mt-2 mb-3">{"}"}</div>
       <div className="h1 mt-5">
-        <a className="mr-4 mr-md-5 icon" href="https://twitter.com/jmiazga" aria-label="Twitter">
+        <a
+          className="mr-4 mr-md-5 icon"
+          href={`https://twitter.com/${social.twitter}`}
+          aria-label="Twitter"
+        >
           <Twitter />
         </a>
-        <a className="mr-4 mr-md-5 icon" href="https://github.com/jmiazga" aria-label="Github">
+        <a
+          className="mr-4 mr-md-5 icon"
+          href={`https://github.com/${social.github}`}
+          aria-label="Github"
+        >
           <Github />
         </a>
         <a
           className="mr-4 mr-md-5 icon"
-          href="https://www.linkedin.com/in/jasonmiazga/"
+          href={`https://www.linkedin.com/in/${social.linkedin}/`}
           aria-label="LinkedIn"
         >
           <Linkedin />
         </a>
         <a
           className="mr-4 mr-md-5 icon"
-          href="mailto://jmiazga+website@gmail.com"
+          href={`mailto://${social.email}`}
           aria-label="Email"
         >
           <Mail />
@@ -54,3 +62,5 @@ export default function info() {
     </div>
   )
 }
+
+export default Info
