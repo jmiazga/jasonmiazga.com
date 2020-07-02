@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/blog`
+  const rootPath = `${__PATH_PREFIX__}/blog/`
   let header
 
   if (location.pathname === rootPath) {
@@ -20,7 +20,7 @@ const Layout = ({ location, title, children }) => {
             boxShadow: `none`,
             color: `inherit`,
           }}
-          to={`/blog`}
+          to={`/blog/`}
         >
           {title}
         </Link>
@@ -39,7 +39,7 @@ const Layout = ({ location, title, children }) => {
             boxShadow: `none`,
             color: `inherit`,
           }}
-          to={`/blog`}
+          to={`/blog/`}
         >
           {title}
         </Link>
