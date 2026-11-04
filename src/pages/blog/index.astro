@@ -1,0 +1,27 @@
+---
+import { getCollection } from "astro:content"
+import Blog from "../../layouts/Blog.astro"
+import Bio from "../../components/Bio.astro"
+import { formatDate } from "../../site"
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+)
+---
+
+<Blog title="All posts" isIndex>
+  <Bio />
+  {posts.map((post) => (
+    <article>
+      <header>
+        <h3 style="margin-bottom: 0.4375rem">
+          <a href={`/${post.id}/`}>{post.data.title}</a>
+        </h3>
+        <small>{formatDate(post.data.date)}</small>
+      </header>
+      <section>
+        <p>{post.data.description || post.body?.slice(0, 140) + "…"}</p>
+      </section>
+    </article>
+  ))}
+</Blog>

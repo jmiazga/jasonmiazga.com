@@ -1,0 +1,42 @@
+---
+import Base from "./Base.astro"
+import { site } from "../site"
+
+interface Props {
+  title: string
+  description?: string
+  isIndex?: boolean
+}
+
+const { title, description, isIndex = false } = Astro.props
+---
+
+<Base title={title} description={description}>
+  <div
+    class="blog"
+    style="margin: 0 auto; max-width: 42rem; padding: 2.625rem 1.3125rem"
+  >
+    <header>
+      {isIndex ? (
+        <h1 style="font-size: 3.95285rem; line-height: 4.375rem; margin: 0 0 2.625rem">
+          <a href="/blog/" style="color: inherit">
+            {site.blogTitle}
+          </a>
+        </h1>
+      ) : (
+        <h3 style="font-family: Montserrat, sans-serif; margin-top: 0">
+          <a href="/blog/" style="color: inherit">
+            {site.blogTitle}
+          </a>
+        </h3>
+      )}
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      © {new Date().getFullYear()}, Built with{" "}
+      <a href="https://astro.build">Astro</a>
+    </footer>
+  </div>
+</Base>
