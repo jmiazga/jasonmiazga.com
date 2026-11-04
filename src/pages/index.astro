@@ -1,0 +1,58 @@
+---
+import Base from "../layouts/Base.astro"
+import { site } from "../site"
+import twitter from "@fortawesome/fontawesome-free/svgs/brands/twitter.svg?raw"
+import github from "@fortawesome/fontawesome-free/svgs/brands/github.svg?raw"
+import linkedin from "@fortawesome/fontawesome-free/svgs/brands/linkedin.svg?raw"
+import envelope from "@fortawesome/fontawesome-free/svgs/solid/envelope.svg?raw"
+
+const { social } = site
+const links = [
+  {
+    label: "Twitter",
+    href: `https://twitter.com/${social.twitter}`,
+    svg: twitter,
+  },
+  { label: "Github", href: `https://github.com/${social.github}`, svg: github },
+  {
+    label: "LinkedIn",
+    href: `https://www.linkedin.com/in/${social.linkedin}/`,
+    svg: linkedin,
+  },
+  { label: "Email", href: `mailto:${social.email}`, svg: envelope },
+]
+---
+
+<Base>
+  <div class="container">
+    <div class="my-5"></div>
+    <div class="display-3" style="color: #ff8a00">
+      <span style="color: white">Hello, I'm</span> <br />
+      Jason Miazga.
+    </div>
+    <div class="h1 code mt-4 mb-3">{"{"}</div>
+    <div class="text-muted mx-5 my-4 h3 info">
+      Senior Developer at VNDLY.
+      <br /> Organizer for{" "}
+      <a href="https://momentumdevcon.com/">
+        Momentum Developer Conference
+      </a>{" "}
+      and{" "}
+      <a href="https://www.meetup.com/Cincinnati-Software-Craftsmanship/">
+        Cincinnati Software Craftsmanship Meetup
+      </a>
+      .
+    </div>
+    <div class="h1 code mt-2 mb-3">{"}"}</div>
+    <div class="h1 mt-5">
+      {links.map(({ label, href, svg }) => (
+        <a
+          class="me-4 me-md-5 icon"
+          href={href}
+          aria-label={label}
+          set:html={svg}
+        />
+      ))}
+    </div>
+  </div>
+</Base>
