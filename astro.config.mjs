@@ -16,5 +16,10 @@ export default defineConfig({
     shikiConfig: { theme: "github-dark" },
   },
 
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // Only list the homepage for now.
+      filter: (page) => new URL(page).pathname === "/",
+    }),
+  ],
 })
